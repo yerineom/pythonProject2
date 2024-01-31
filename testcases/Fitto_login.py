@@ -3,7 +3,7 @@ import time
 from Config import start_fitto
 from selenium.webdriver.common.by import By
 
-
+#push테스트
 
 #Intro > Swipe
 time.sleep(5)
