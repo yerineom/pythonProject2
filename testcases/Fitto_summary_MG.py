@@ -2,7 +2,7 @@ import time
 
 from Config import start_fitto
 from selenium.webdriver.common.by import By
-
+from testcases import Fitto_Daily
 
 
 def summaryMG():
@@ -30,13 +30,25 @@ def summaryMG():
     time.sleep(1)
     el = start_fitto.driver.find_element(By.ID,"ohc.app.fitto:id/txtBestRecordValue")
     if el is not None and el.is_displayed():
-        print("case 2: MG 최고 기록 순위 존재 확인\n"
-              "\033[34m" + " -----> 최고 기록 항목이 존재함" + "\033[0m")
+        print("case 2: MG 최고 기록 순위 표시 확인\n"
+              "\033[34m" + " -----> 최고 기록 항목이 표시됨" + "\033[0m")
     else:
         print("case 2: MG 최고 기록 순위 존재 확인\n"
-              "\033[91m" + " -----> 최고 기록 항목이 존재 하지 않음" + "\033[0m")
+              "\033[91m" + " -----> 최고 기록 항목이 표시 되지 않음" + "\033[0m")
+
+    time.sleep(1)
+    el = start_fitto.driver.find_element(By.ID,"ohc.app.fitto:id/btnClose").click()
+
+    time.sleep(1)
+    el = start_fitto.driver.find_element(By.ID, "ohc.app.fitto:id/txtUserAlias")
+    if el is not None and el.is_displayed():
+        print("case 3: MG page > back 버튼 동작 확인\n"
+              "\033[34m" + " -----> Summary page로 이동됨" + "\033[0m")
+    else:
+        print("case 3: MG page > back 버튼 동작 확인\n"
+              "\033[91m" + " -----> Summary page로 이동 되지 않음" + "\033[0m")
 
 
-
+    Fitto_Daily.FittoDaily()
 
 

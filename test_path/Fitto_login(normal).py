@@ -6,7 +6,9 @@ from selenium.webdriver.common.by import By
 #from testcases import Fitto_summary_profile
 #from testcases import Fitto_summry_totalLM
 #from testcases import Fitto_summary_MQ
-from testcases import Fitto_summary_MG
+#from testcases import Fitto_summary_MG
+from testcases import Fitto_Daily
+
 
 #로그인
 #가입한 계정이 있어요 버튼 선택
@@ -38,4 +40,5 @@ el = start_fitto.driver.find_element(By.ID,"ohc.app.fitto:id/btnSkip").click()
 #Fitto_summary_profile.summaryprofile()
 #Fitto_summry_totalLM.totalLM()
 #Fitto_summary_MQ.summaryMQ()
-Fitto_summary_MG.summaryMG()
+#Fitto_summary_MG.summaryMG()
+Fitto_Daily.FittoDaily()
